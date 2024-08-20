@@ -14,19 +14,33 @@ struct LazyForEachCase {
   }
 
   build() {
-    RelativeContainer() {
+    Column({ space: 20 }) {
+      /*
+       * List Grid Swiper WaterFlow
+       * 只能是这些组件可以使用LayForEach
+       * */
+      Text('LazyForEach 数据懒加载')
+        .width('100%')
+        .height(100)
+        .fontColor(Color.Blue)
+        .backgroundColor(Color.Red)
+        .fontSize(30)
+        .fontWeight(FontWeight.Bold)
+        .textAlign(TextAlign.Center)
+
       List({ space: 20 }) {
         LazyForEach(this.list, (item: Item) => {
           ListItem() {
             Text(item.value.toString())
               .fontSize(30)
-              .fontColor(Color.White)
+              .fontColor(Color.Red)
+              .fontWeight(FontWeight.Bold)
               .width("100%")
               .textAlign(TextAlign.Center)
           }
           .width("100%")
           .height(100)
-          .backgroundColor(Color.Blue)
+          .backgroundColor(Color.Pink)
           .onAppear(() => {
             console.log(item.value + "项开始渲染")
           })
@@ -34,11 +48,11 @@ struct LazyForEachCase {
             console.log(item.value + "项开始销毁")
           })
         })
-
       }
     }
     .height('100%')
     .width('100%')
+    .padding(20)
   }
 }
 
