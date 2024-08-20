@@ -14,20 +14,13 @@ struct ConnectPageNB {
   obj: WebSdk = new WebSdk()
 
   build() {
-    RelativeContainer() {
+    Column({ space: 20 }) {
       Button("发送消息")
-        .id("btn1")
 
       Web({
         src: $rawfile("kit.html"),
         controller: this.obj.controller
       })
-        .alignRules({
-          top: {
-            anchor: 'text1',
-            align: VerticalAlign.Bottom
-          }
-        })
         .javaScriptProxy({
           name: 'hm', // 会注入到前端页面的html的全局对象上
           methodList: ["showToast", "takePhoto", "getLocation"], // 必须手动实现
@@ -40,7 +33,6 @@ struct ConnectPageNB {
           return true
         })
         .onPageEnd(() => {
-
         })
     }
     .height('100%')

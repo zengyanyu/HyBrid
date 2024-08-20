@@ -5,6 +5,7 @@ import { router } from '@kit.ArkUI'
 @Entry
 @Component
 struct DownLoad {
+  // 热更新
   async hotReload() {
     try {
       // 下载 沙箱目录 => 判断沙箱目录是否有重复的地址
@@ -35,20 +36,22 @@ struct DownLoad {
   }
 
   build() {
-    RelativeContainer() {
+    Column() {
       Button("热更新")
-        .id('DownLoadHelloWorld')
-        .fontSize(50)
+        .fontSize(40)
         .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
+        .width('100%')
+        .type(ButtonType.Normal)
+        .borderRadius(10)
         .onClick(() => {
           this.hotReload()
         })
     }
+    .justifyContent(FlexAlign.Center)
+    .alignItems(HorizontalAlign.Center)
     .height('100%')
     .width('100%')
+    .backgroundColor(Color.Pink)
+    .padding(10)
   }
 }

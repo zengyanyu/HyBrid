@@ -12,6 +12,7 @@ struct ConnectPage {
   @Watch("updateName")
   name: string = ""
 
+  // 创建端口,默认创建两个,一个用来发送消息,一个用来接收消息
   createPorts() {
     this.ports = this.controller.createWebMessagePorts() // 有两个端口
     if (this.ports.length) {
@@ -29,39 +30,29 @@ struct ConnectPage {
   }
 
   build() {
-    RelativeContainer() {
+    Column({ space: 10 }) {
       Button("发送消息")
         .id("btn1")
+
       TextInput({
         placeholder: '请输入内容',
         text: $$this.name
       })
-        .id("text1")
-        .alignRules({
-          top: {
-            anchor: 'btn1',
-            align: VerticalAlign.Bottom
-          }
-        })
+
+      // 混合开发页面使用Web组件
       Web({
         src: $rawfile("index.html"),
         controller: this.controller
+      }).onAlert((res) => {
+        AlertDialog.show({ message: res.message })
+        return true
       })
-        .alignRules({
-          top: {
-            anchor: 'text1',
-            align: VerticalAlign.Bottom
-          }
-        })
-        .onAlert((res) => {
-          AlertDialog.show({ message: res.message })
-          return true
-        })
         .onPageEnd(() => {
           this.createPorts()
         })
     }
     .height('100%')
     .width('100%')
+    .padding(20)
   }
 }

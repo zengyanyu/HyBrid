@@ -4,7 +4,7 @@ import { webview } from '@kit.ArkWeb';
 @Component
 struct WebHybrid {
   build() {
-    RelativeContainer() {
+    Column() {
       Web({
         src: "file://" + getContext().filesDir + "/toutiao/index.html",
         controller: new webview.WebviewController()
