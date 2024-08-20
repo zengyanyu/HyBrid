@@ -71,7 +71,6 @@ class WebSdk {
       let err = error as BusinessError;
       console.error(`the pick call failed. error code: ${err.code}`);
     }
-
   }
 
   // 获取定位

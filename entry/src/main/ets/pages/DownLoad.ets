@@ -23,7 +23,7 @@ struct DownLoad {
       })
       task.on("complete", async () => {
         await zlib.decompressFile(filePath, getContext().filesDir)
-        AlertDialog.show({ message: '解压完成' })
+        // AlertDialog.show({ message: '解压完成' })
         router.pushUrl({
           url: 'pages/WebHybrid'
         })

@@ -4,8 +4,6 @@ import { webview } from '@kit.ArkWeb';
 @Entry
 @Component
 struct Index {
-  @State message: string = 'Hello World';
-
   build() {
     Column() {
       Button("原生组件")

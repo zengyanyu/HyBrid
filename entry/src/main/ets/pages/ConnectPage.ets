@@ -1,5 +1,8 @@
 import { webview } from '@kit.ArkWeb'
 
+/**
+ * 混合开发-连接页面
+ */
 @Entry
 @Component
 struct ConnectPage {

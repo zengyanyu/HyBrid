@@ -3,8 +3,6 @@ import { webview } from '@kit.ArkWeb';
 @Entry
 @Component
 struct WebHybrid {
-  @State message: string = 'Hello World';
-
   build() {
     RelativeContainer() {
       Web({

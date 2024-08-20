@@ -1,5 +1,3 @@
-import text from '@ohos.graphics.text'
-
 @Entry
 @Component
 struct LazyForEachCase {
