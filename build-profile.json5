@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "/Users/gaolingyu/.ohos/config/default_HyBrid_Test_1_QaRKiPno3MgJ1Q9mEd77FN_5LpQvplWyc74vLvL18=.cer",
-          "storePassword": "0000001BA4DCBE5FA2C44CC6CD86B5E23ECE5AD7CCE4BE55C5341F63E03B4BE401671DE3738E825B7D7524",
+          "certpath": "C:\\Users\\86134\\.ohos\\config\\default_HyBrid_v3ompdpgDC7VqmQDwCPRac0-DZ028Or6BhbQbAizBlY=.cer",
+          "storePassword": "0000001BCEF9FEB6C721F4E7236F9C8EBEFE2FEBDABD83BC573BF7D55335A5088B25F8FCEB8D8814C50E91",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B99296879CD7F897F20883F0C82E5FEC79A39422A27CBC5BA0CD6E8EAEC2CD734BD082B95145561",
-          "profile": "/Users/gaolingyu/.ohos/config/default_HyBrid_Test_1_QaRKiPno3MgJ1Q9mEd77FN_5LpQvplWyc74vLvL18=.p7b",
+          "keyPassword": "0000001B7D7FBCD23D8C497A9F25D71D1DB2319BF4EECD14ABB2F7E508FDAF9EACDD699BBD198ECE7488DB",
+          "profile": "C:\\Users\\86134\\.ohos\\config\\default_HyBrid_v3ompdpgDC7VqmQDwCPRac0-DZ028Or6BhbQbAizBlY=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/gaolingyu/.ohos/config/default_HyBrid_Test_1_QaRKiPno3MgJ1Q9mEd77FN_5LpQvplWyc74vLvL18=.p12"
+          "storeFile": "C:\\Users\\86134\\.ohos\\config\\default_HyBrid_v3ompdpgDC7VqmQDwCPRac0-DZ028Or6BhbQbAizBlY=.p12"
         }
       }
     ],
