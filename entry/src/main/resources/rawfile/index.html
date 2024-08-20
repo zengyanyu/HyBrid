@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myContent {
+            color: red;
+            font-size: 30px
+        }
+    </style>
+</head>
+<body>
+<h1>h5页面调试</h1>
+<input id="myInput" type="text">
+<div id="myContent">
+
+</div>
+<script>
+    var currentPort = null
+    window.onmessage = (event) => {
+       if(event.data === "trans_port") {
+        currentPort = event.ports[0] // 赋值全局的端口 通信端口
+        if(currentPort) {
+            currentPort.onmessage = (params) => {
+                document.querySelector("#myContent").innerText = params.data
+
+            }
+
+        }
+       }
+    }
+    document.querySelector("#myInput").oninput  = (event) => {
+      // h5的最新值
+      if(currentPort) {
+        currentPort.postMessage(event.target.value)
+      }
+
+    }
+</script>
+</body>
+</html>

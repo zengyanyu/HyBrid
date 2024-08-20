@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            width: 200px;
+            height: 100px;
+            background-color: brown;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="block" onclick="showMsg()">弹窗</div>
+<div class="block" onclick="takePhoto()">拍照</div>
+<img id="myImg" style="width: 300px; height: 200px"/>
+<div class="block">获取经纬度</div>
+<script>
+    function showMsg() {
+       if(window.hm) {
+        window.hm.showToast("终于调用成功了")
+       }
+    }
+    function takePhoto () {
+        if(window.hm) {
+        window.hm.takePhoto("getPhoto")
+       }
+    }
+    function getPhoto (url) {
+     document.querySelector("#myImg").style.display = "block"
+     document.querySelector("#myImg").src = url
+    }
+</script>
+</body>
+</html>
